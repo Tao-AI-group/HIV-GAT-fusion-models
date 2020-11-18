@@ -20,7 +20,6 @@ def attn_head(seq, out_sz, bias_mat, activation, in_drop=0.0, coef_drop=0.0, res
         f_2 = tf.layers.conv1d(seq_fts, 1, 1)
 
         # correlation matrix, each element is added by all others
-        # shouldn't it be the product? meaning log sum?
         logits = f_1 + tf.transpose(f_2, [0, 2, 1])
 
 
